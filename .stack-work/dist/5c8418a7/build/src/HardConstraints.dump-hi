@@ -1,0 +1,307 @@
+
+==================== FINAL INTERFACE ====================
+2018-03-09 22:33:35.465122 UTC
+
+interface jkfso-haskell-0.1.0.0-9wfP2njLanP40orVtGiOyG:HardConstraints 8022
+  interface hash: 1af0c4ee30f79f157c9cf6814fca7c30
+  ABI hash: b8cce133a0c50166437a32310b787d70
+  export-list hash: 44a146debe8e3d7980f77b6fbf107fe6
+  orphan hash: 37381a75cf0e7e7b96c45fcb5089ad9f
+  flag hash: c98e1eb85fe7ed81c2ec56ee6ec1ed45
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  HardConstraints.checkForbid
+  HardConstraints.checkTooNear
+  HardConstraints.forcedDoubles
+  HardConstraints.getMachL
+  HardConstraints.getMachR
+  HardConstraints.getMachs
+  HardConstraints.getTasks
+  HardConstraints.makeForced
+  HardConstraints.makePair
+module dependencies:
+package dependencies: base-4.10.1.0* ghc-prim-0.5.1.1
+                      integer-gmp-1.0.1.0
+orphans: base-4.10.1.0:GHC.Float base-4.10.1.0:GHC.Base
+family instance modules: base-4.10.1.0:Control.Applicative
+                         base-4.10.1.0:Data.Either base-4.10.1.0:Data.Functor.Const
+                         base-4.10.1.0:Data.Functor.Identity base-4.10.1.0:Data.Monoid
+                         base-4.10.1.0:Data.Type.Equality base-4.10.1.0:GHC.Generics
+                         base-4.10.1.0:GHC.IO.Exception base-4.10.1.0:GHC.TypeLits
+                         base-4.10.1.0:GHC.TypeNats
+import  -/  base-4.10.1.0:Data.Foldable 4349255461f1285ad885cd2301205c36
+import  -/  base-4.10.1.0:Data.Tuple ab0c62ebfcacf00dcba54934885c5064
+import  -/  base-4.10.1.0:GHC.Base 8f949d675e49677c272f02ab7a85fe18
+import  -/  base-4.10.1.0:GHC.List 1bb0adf79553530dc898796596e53188
+import  -/  base-4.10.1.0:GHC.Num bee60808f8127e4cda82dd422aa1c6c0
+import  -/  base-4.10.1.0:GHC.Show 927ef590f679632bf94869e8018e5b48
+import  -/  base-4.10.1.0:Prelude a93a9400cc0c816c2ee5f39399baa7a0
+import  -/  base-4.10.1.0:Text.Read c150617dda21a009ed26981626bd21d7
+import  -/  ghc-prim-0.5.1.1:GHC.Classes 64ad5910d03ab188ab9b4adef7487b1e
+c4da82b47973077ebac4cd01984eb814
+  $s$fEq(,) :: GHC.Classes.Eq (GHC.Types.Char, GHC.Types.Char)
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Types.Char, GHC.Types.Char)
+                  (GHC.Classes.$fEq(,)_$c==
+                     @ GHC.Types.Char
+                     @ GHC.Types.Char
+                     GHC.Classes.$fEqChar
+                     GHC.Classes.$fEqChar)
+                  (GHC.Classes.$fEq(,)_$c/=
+                     @ GHC.Types.Char
+                     @ GHC.Types.Char
+                     GHC.Classes.$fEqChar
+                     GHC.Classes.$fEqChar) -}
+8d7a0647458a5f14e8e3c36e67739869
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   HardConstraints.$trModule3
+                   HardConstraints.$trModule1) -}
+ff0c630544645661ce3e6befd819e75d
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS HardConstraints.$trModule2) -}
+fa90a04292e40dbcf0bf27a6b14a7221
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("HardConstraints"#) -}
+e5c6159a2c0a8e391c15425c00aeff37
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS HardConstraints.$trModule4) -}
+6b6898041ca2ac691a6b364bdb94cc41
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("jkfso-haskell-0.1.0.0-9wfP2njLanP40orVtGiOyG"#) -}
+36e265f87d9438981215946769b3e2b5
+  $wgetMachL :: GHC.Prim.Char# -> GHC.Types.Char
+  {- Arity: 1, Strictness: <S,1*U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Char#) ->
+                 case ww of wild {
+                   DEFAULT
+                   -> case Text.Read.readEither8
+                             @ GHC.Types.Int
+                             (Text.ParserCombinators.ReadP.run
+                                @ GHC.Types.Int
+                                HardConstraints.getMachL4
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   (GHC.Types.C# wild)
+                                   (GHC.Types.[] @ GHC.Types.Char))) of wild1 {
+                        [] -> case HardConstraints.getMachL3 ret_ty GHC.Types.Char of {}
+                        : x ds
+                        -> case ds of wild2 {
+                             []
+                             -> case x of wild3 { GHC.Types.I# x1 ->
+                                case GHC.Show.$wshowSignedInt
+                                       0#
+                                       (GHC.Prim.-# x1 1#)
+                                       (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                                ww5 } }
+                             : ipv ipv1
+                             -> case HardConstraints.getMachL2 ret_ty GHC.Types.Char of {} } }
+                   '1'# -> HardConstraints.getMachL1 }) -}
+8cf0ac1532d44e538c265f0a54a32f76
+  $wgetMachR :: GHC.Prim.Char# -> GHC.Types.Char
+  {- Arity: 1, Strictness: <S,1*U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Char#) ->
+                 case ww of wild {
+                   DEFAULT
+                   -> case Text.Read.readEither8
+                             @ GHC.Types.Int
+                             (Text.ParserCombinators.ReadP.run
+                                @ GHC.Types.Int
+                                HardConstraints.getMachL4
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   (GHC.Types.C# wild)
+                                   (GHC.Types.[] @ GHC.Types.Char))) of wild1 {
+                        [] -> case HardConstraints.getMachL3 ret_ty GHC.Types.Char of {}
+                        : x ds
+                        -> case ds of wild2 {
+                             []
+                             -> case x of wild3 { GHC.Types.I# x1 ->
+                                case GHC.Show.$wshowSignedInt
+                                       0#
+                                       (GHC.Prim.+# x1 1#)
+                                       (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                                ww5 } }
+                             : ipv ipv1
+                             -> case HardConstraints.getMachL2 ret_ty GHC.Types.Char of {} } }
+                   '8'# -> HardConstraints.getMachR1 }) -}
+d1bea667dff7a1514a76616c81b3b706
+  checkForbid ::
+    (GHC.Types.Char, GHC.Types.Char)
+    -> [(GHC.Types.Char, GHC.Types.Char)] -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: (GHC.Types.Char, GHC.Types.Char))
+                   (forbidden :: [(GHC.Types.Char, GHC.Types.Char)]) ->
+                 GHC.List.elem
+                   @ (GHC.Types.Char, GHC.Types.Char)
+                   HardConstraints.$s$fEq(,)
+                   x
+                   forbidden) -}
+62ef7aa0eb31122a6b0e1d86c6005260
+  checkTooNear ::
+    [(GHC.Types.Char, GHC.Types.Char)]
+    -> GHC.Types.Char
+    -> GHC.Types.Char
+    -> [(GHC.Types.Char, GHC.Types.Char)]
+  {- Arity: 3, Strictness: <S,1*U><L,1*U(U)><L,U(U)> -}
+a4a826b45557dc47747979bc1a9303ff
+  forcedDoubles ::
+    [(GHC.Types.Char, GHC.Types.Char)] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U> -}
+da5a19fb7e85455ab277120a651f57bc
+  getMachL :: GHC.Types.Char -> GHC.Types.Char
+  {- Arity: 1, Strictness: <S(S),1*U(1*U)>, Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: GHC.Types.Char) ->
+                 case w of ww { GHC.Types.C# ww1 ->
+                 HardConstraints.$wgetMachL ww1 }) -}
+5fb21d3146f3099788bf6b351826c84d
+  getMachL1 :: GHC.Types.Char
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.C# '8'#) -}
+bad091b64e98196e494a8cf552fd7712
+  getMachL2 :: GHC.Types.Int
+  {- Strictness: x -}
+d825fdb6e81240561e7d3847819d8898
+  getMachL3 :: GHC.Types.Int
+  {- Strictness: x -}
+f899a8dec0e9118a6850413088679aa3
+  getMachL4 :: Text.ParserCombinators.ReadP.P GHC.Types.Int
+  {- Unfolding: (GHC.Read.$fReadInt_$sreadNumber
+                   GHC.Read.$fReadInt2
+                   Text.ParserCombinators.ReadPrec.minPrec
+                   @ GHC.Types.Int
+                   (Text.Read.readEither7 @ GHC.Types.Int)) -}
+7a9c844a0e5186d3c54252928f965f21
+  getMachR :: GHC.Types.Char -> GHC.Types.Char
+  {- Arity: 1, Strictness: <S(S),1*U(1*U)>, Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: GHC.Types.Char) ->
+                 case w of ww { GHC.Types.C# ww1 ->
+                 HardConstraints.$wgetMachR ww1 }) -}
+5c0914646760d0f03423693cad685ee9
+  getMachR1 :: GHC.Types.Char
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.C# '1'#) -}
+b94c7fffac7296386d685b9785d9e0bd
+  getMachs :: [(GHC.Types.Char, GHC.Types.Char)] -> [GHC.Types.Char]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+98203e5bb2809c715ae03f5d4ddb904b
+  getTasks :: [(GHC.Types.Char, GHC.Types.Char)] -> [GHC.Types.Char]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: (HardConstraints.getMachs) -}
+f4955cbfaccff2dd13cc0e90af808ad6
+  makeForced ::
+    [(GHC.Types.Char, GHC.Types.Char)]
+    -> [(GHC.Types.Char, GHC.Types.Char)]
+    -> [(GHC.Types.Char, GHC.Types.Char)]
+    -> [GHC.Types.Char]
+    -> [GHC.Types.Char]
+  {- Arity: 4, Strictness: <S,1*U><L,U><L,U><L,1*U> -}
+7f382eae3100e3c945180511b8610f3f
+  makePair ::
+    (GHC.Types.Char, GHC.Types.Char)
+    -> [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <L,U(1*U,1*U)><L,1*U>,
+     Unfolding: (\ (x :: (GHC.Types.Char, GHC.Types.Char))
+                   (matches :: [GHC.Types.Char]) ->
+                 case Text.Read.readEither8
+                        @ GHC.Types.Int
+                        (Text.ParserCombinators.ReadP.run
+                           @ GHC.Types.Int
+                           HardConstraints.getMachL4
+                           (GHC.Types.:
+                              @ GHC.Types.Char
+                              (case x of wild { (,) x1 ds1 -> x1 })
+                              (GHC.Types.[] @ GHC.Types.Char))) of wild {
+                   [] -> case HardConstraints.getMachL3 ret_ty [GHC.Types.Char] of {}
+                   : x1 ds
+                   -> case ds of wild1 {
+                        []
+                        -> case x1 of wild2 { GHC.Types.I# x2 ->
+                           let {
+                             x3 :: GHC.Prim.Int# = GHC.Prim.-# x2 1#
+                           } in
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.<=# x3 0#) of wild3 {
+                             GHC.Types.False
+                             -> case matches of wild4 {
+                                  []
+                                  -> GHC.Base.++
+                                       @ GHC.Types.Char
+                                       (GHC.Types.[] @ GHC.Types.Char)
+                                       (GHC.Types.:
+                                          @ GHC.Types.Char
+                                          (case x of wild5 { (,) ds1 y -> y })
+                                          (GHC.List.scanl2 @ GHC.Types.Char))
+                                  : ipv ipv1
+                                  -> case x3 of ds1 {
+                                       DEFAULT
+                                       -> let {
+                                            ds2 :: ([GHC.Types.Char], [GHC.Types.Char])
+                                            = case GHC.List.splitAt_$s$wsplitAt'
+                                                     @ GHC.Types.Char
+                                                     ipv1
+                                                     (GHC.Prim.-# ds1 1#) of ww { (#,#) ww1 ww2 ->
+                                              (ww1, ww2) }
+                                          } in
+                                          GHC.Base.++
+                                            @ GHC.Types.Char
+                                            (GHC.Types.:
+                                               @ GHC.Types.Char
+                                               ipv
+                                               (case ds2 of wild5 { (,) xs' xs'' -> xs' }))
+                                            (GHC.Types.:
+                                               @ GHC.Types.Char
+                                               (case x of wild5 { (,) ds4 y -> y })
+                                               (case ds2 of wild5 { (,) xs' xs'' ->
+                                                case xs'' of wild6 {
+                                                  [] -> GHC.List.scanl2 @ GHC.Types.Char
+                                                  : ds4 xs -> xs } }))
+                                       1#
+                                       -> GHC.Base.++
+                                            @ GHC.Types.Char
+                                            (GHC.Types.:
+                                               @ GHC.Types.Char
+                                               ipv
+                                               (GHC.Types.[] @ GHC.Types.Char))
+                                            (GHC.Types.:
+                                               @ GHC.Types.Char
+                                               (case x of wild5 { (,) ds2 y -> y })
+                                               (case ipv1 of wild5 {
+                                                  [] -> GHC.List.scanl2 @ GHC.Types.Char
+                                                  : ds2 xs -> xs })) } }
+                             GHC.Types.True
+                             -> GHC.Base.++
+                                  @ GHC.Types.Char
+                                  (GHC.Types.[] @ GHC.Types.Char)
+                                  (GHC.Types.:
+                                     @ GHC.Types.Char
+                                     (case x of wild4 { (,) ds1 y -> y })
+                                     (case matches of wild4 {
+                                        [] -> GHC.List.scanl2 @ GHC.Types.Char
+                                        : ds1 xs -> xs })) } }
+                        : ipv ipv1
+                        -> case HardConstraints.getMachL2
+                           ret_ty [GHC.Types.Char]
+                           of {} } }) -}
+"SPEC/HardConstraints $fEq(,) @ Char @ Char" [orphan] forall (v1 :: GHC.Classes.Eq
+                                                                      GHC.Types.Char)
+                                                             (v :: GHC.Classes.Eq GHC.Types.Char)
+  GHC.Classes.$fEq(,) @ GHC.Types.Char @ GHC.Types.Char v v1
+  = HardConstraints.$s$fEq(,)
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
