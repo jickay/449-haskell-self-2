@@ -150,22 +150,6 @@ module SoftConstraints where
         Just x -> x
         Nothing -> 0
 
-    getTask :: String -> Int -> Char
-    getTask [] _ = 'x'
-    getTask matches index
-        | i == index        = x
-        | otherwise         = getTask matches index
-        where (x:xs) = matches
-              i = getIndex (elemIndex x matches)
-
-    getRow :: [[Int]] -> Int -> [Int]
-    getRow [] _ = []
-    getRow grid index
-        | i == index        = x
-        | otherwise         = getRow xs index
-        where (x:xs) = grid
-              i = getIndex (elemIndex x grid)
-
     -- Check if pair to match is forbidden; returns True if forbidden
     invalidMatch :: Int -> Char -> [(Char,Char)] -> Bool
     invalidMatch _ _ [] = False
