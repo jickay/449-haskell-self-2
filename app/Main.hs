@@ -45,8 +45,9 @@ module Main where
     
         -- Soft Constraints
         let finalMatches = iterateMatches forcedMatches grid tooNearPen forbidPairs
-        -- outputError outFileName finalMatches
-        let quality = getQual finalMatches grid tooNearPen
+        print ("Final Matches: " ++ finalMatches)
+        outputError outFileName (solutionValid finalMatches)
+        let quality = getQual finalMatches finalMatches grid tooNearPen
     
         -- Solution filler
         let solution = makeSolution finalMatches quality

@@ -33,7 +33,8 @@ parseTriple (x:xs)
           values = removeParen x
           val1 = values !! 0
           val2 = values !! 1
-          val3 = read [values !! 2]::Int
+          isNum = values !! 2 `elem` "0123456789"
+          val3 = if isNum then read [values !! 2]::Int else -1
           triple = [(val1,val2,val3)]
 
 -- Parsing grid by parsing lines after given label
@@ -52,9 +53,20 @@ parseGrid (x:xs)
 parseRow :: String -> [Int]
 parseRow [] = []
 parseRow row =
-    let valString = words row
-        valInts = map read valString
-    in valInts
+    let penStrings = words row
+        checkedPenStrings = checkIntStrings penStrings
+        penInts = strToInt checkedPenStrings
+    in penInts
+
+strToInt :: [String] -> [Int]
+strToInt [] = []
+strToInt (x:xs) = [read x::Int] ++ (strToInt xs)
+
+checkIntStrings :: [String] -> [String]
+checkIntStrings [] = []
+checkIntStrings (x:xs)
+    | '.' `elem` x          = ["-1"] ++ checkIntStrings xs
+    | otherwise             = [x] ++ checkIntStrings xs
 
 -- Remove extra characters from input lines
 removeParen :: String -> String
@@ -85,9 +97,9 @@ validTaskTask (x:xs)
 validTask :: [(Char,Char,Int)] -> String
 validTask [] = ""
 validTask (x:xs)
-    | task1 `notElem` tasks         = "invalid machine/task"
-    | task2 `notElem` tasks         = "invalid machine/task"
-    | pen < 0                       = "invalid penalty"
+    | task1 `notElem` tasks         = "invalid task"
+    | task2 `notElem` tasks         = "invalid task"
+    | validPen [pen]                = "invalid penalty"
     | otherwise                     = validTask xs
     where task1 = triplefst x
           task2 = triplesnd x
@@ -111,5 +123,5 @@ validRow (x:xs)
 validPen :: [Int] -> Bool
 validPen [] = False
 validPen (x:xs)
-    | x < 0         = True
-    | otherwise     = validPen xs
+    | x <= 0             = True
+    | otherwise          = validPen xs
