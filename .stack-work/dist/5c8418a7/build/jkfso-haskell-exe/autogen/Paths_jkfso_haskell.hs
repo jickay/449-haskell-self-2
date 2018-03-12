@@ -29,12 +29,12 @@ version :: Version
 version = Version [0,1,0,0] []
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 
-bindir     = "C:\\Users\\jicka_000\\Desktop\\CPSC449\\449-haskell-self\\.stack-work\\install\\9d660cc9\\bin"
-libdir     = "C:\\Users\\jicka_000\\Desktop\\CPSC449\\449-haskell-self\\.stack-work\\install\\9d660cc9\\lib\\x86_64-windows-ghc-8.2.2\\jkfso-haskell-0.1.0.0-7hIJ3vSkuCW8IfD5XEJ3uA-jkfso-haskell-exe"
-dynlibdir  = "C:\\Users\\jicka_000\\Desktop\\CPSC449\\449-haskell-self\\.stack-work\\install\\9d660cc9\\lib\\x86_64-windows-ghc-8.2.2"
-datadir    = "C:\\Users\\jicka_000\\Desktop\\CPSC449\\449-haskell-self\\.stack-work\\install\\9d660cc9\\share\\x86_64-windows-ghc-8.2.2\\jkfso-haskell-0.1.0.0"
-libexecdir = "C:\\Users\\jicka_000\\Desktop\\CPSC449\\449-haskell-self\\.stack-work\\install\\9d660cc9\\libexec\\x86_64-windows-ghc-8.2.2\\jkfso-haskell-0.1.0.0"
-sysconfdir = "C:\\Users\\jicka_000\\Desktop\\CPSC449\\449-haskell-self\\.stack-work\\install\\9d660cc9\\etc"
+bindir     = "C:\\Users\\User\\Desktop\\CPSC449\\449-haskell-self-2\\.stack-work\\install\\9d660cc9\\bin"
+libdir     = "C:\\Users\\User\\Desktop\\CPSC449\\449-haskell-self-2\\.stack-work\\install\\9d660cc9\\lib\\x86_64-windows-ghc-8.2.2\\jkfso-haskell-0.1.0.0-7hIJ3vSkuCW8IfD5XEJ3uA-jkfso-haskell-exe"
+dynlibdir  = "C:\\Users\\User\\Desktop\\CPSC449\\449-haskell-self-2\\.stack-work\\install\\9d660cc9\\lib\\x86_64-windows-ghc-8.2.2"
+datadir    = "C:\\Users\\User\\Desktop\\CPSC449\\449-haskell-self-2\\.stack-work\\install\\9d660cc9\\share\\x86_64-windows-ghc-8.2.2\\jkfso-haskell-0.1.0.0"
+libexecdir = "C:\\Users\\User\\Desktop\\CPSC449\\449-haskell-self-2\\.stack-work\\install\\9d660cc9\\libexec\\x86_64-windows-ghc-8.2.2\\jkfso-haskell-0.1.0.0"
+sysconfdir = "C:\\Users\\User\\Desktop\\CPSC449\\449-haskell-self-2\\.stack-work\\install\\9d660cc9\\etc"
 
 getBinDir, getLibDir, getDynLibDir, getDataDir, getLibexecDir, getSysconfDir :: IO FilePath
 getBinDir = catchIO (getEnv "jkfso_haskell_bindir") (\_ -> return bindir)

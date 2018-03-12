@@ -21,7 +21,7 @@ getMachs (x:xs) =
 getTasks :: [(Char,Char)] -> [Char]
 getTasks [] = []
 getTasks (x:xs) =
-    let task = fst x
+    let task = snd x
     in [task] ++ getTasks xs
 
 -- Make forced pairs

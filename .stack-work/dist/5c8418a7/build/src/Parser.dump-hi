@@ -1,17 +1,18 @@
 
 ==================== FINAL INTERFACE ====================
-2018-03-09 22:41:50.3387556 UTC
+2018-03-12 18:47:37.2091655 UTC
 
 interface jkfso-haskell-0.1.0.0-9wfP2njLanP40orVtGiOyG:Parser 8022
-  interface hash: bc7afa976ca80fd551d6c53817373b91
-  ABI hash: 6b1b2e52d986ebe1a0394b1a1b0f7802
-  export-list hash: 211061bd65881cf6356afa248a4611c3
+  interface hash: c215bab7499b4904db7e432416ec845a
+  ABI hash: 8eb0dc2b4febf30e20663b464ea9e604
+  export-list hash: 3c5b4fdb54270bbf2717c5b9de770f29
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
-  flag hash: c98e1eb85fe7ed81c2ec56ee6ec1ed45
+  flag hash: d22a7c21c2893d38d08642ed0a9c099e
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  Parser.checkIntStrings
   Parser.getGridSection
   Parser.getTripleSection
   Parser.getTupleSection
@@ -21,6 +22,7 @@ exports:
   Parser.parseTuple
   Parser.removeParen
   Parser.removeSpaces
+  Parser.strToInt
   Parser.validGrid
   Parser.validMachTask
   Parser.validPen
@@ -45,7 +47,7 @@ import  -/  base-4.10.1.0:GHC.List 1bb0adf79553530dc898796596e53188
 import  -/  base-4.10.1.0:Prelude a93a9400cc0c816c2ee5f39399baa7a0
 import  -/  base-4.10.1.0:Text.Read c150617dda21a009ed26981626bd21d7
 import  -/  ghc-prim-0.5.1.1:GHC.Classes 64ad5910d03ab188ab9b4adef7487b1e
-import  -/  SoftConstraints 5e5ab34aee25158049bb25933a33f568
+import  -/  SoftConstraints 490ba58a8a4eba1b5afd8e2b3d7a0f0c
   exports: 776a0f8c37e732fcab08d9c7a460c616
   machines c8f2249cf341b5e3e3a9f4b08d7617e6
   tasks 261b68d8e1f6b32bb78425c420aa8135
@@ -73,6 +75,9 @@ fa9ba8f495e76dc73faf1b7c434622a2
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs,
      Unfolding: ("jkfso-haskell-0.1.0.0-9wfP2njLanP40orVtGiOyG"#) -}
+3928afc73729082daa3cb04078861602
+  checkIntStrings :: [GHC.Base.String] -> [GHC.Base.String]
+  {- Arity: 1, Strictness: <S,1*U> -}
 c26b3f364d03fac5d18ae4ac269677f1
   getGridSection ::
     [GHC.Base.String] -> GHC.Base.String -> [[GHC.Types.Int]]
@@ -91,16 +96,22 @@ c26b3f364d03fac5d18ae4ac269677f1
 86c6b74d63d9eb54f3be6a24e6eb9a43
   parseGrid :: [GHC.Base.String] -> [[GHC.Types.Int]]
   {- Arity: 1, Strictness: <S,1*U> -}
-c753443a0f1904c45535017d9a2a0d0a
+db089c8b7e659493ab55505c2d187c82
   parseRow :: GHC.Base.String -> [GHC.Types.Int]
   {- Arity: 1, Strictness: <S,1*U>,
-     Unfolding: (\ (ds :: [GHC.Types.Char]) ->
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: [GHC.Types.Char]) ->
                  case ds of wild {
                    [] -> GHC.Types.[] @ GHC.Types.Int
-                   : ipv ipv1 -> Parser.parseRow_go wild }) -}
-b8fd4e1aed1aa60602d00e73d91a409a
-  parseRow_go :: [GHC.Types.Char] -> [GHC.Types.Int]
-  {- Arity: 1, Strictness: <S,1*U> -}
+                   : ipv ipv1
+                   -> Parser.strToInt
+                        (Parser.checkIntStrings
+                           (GHC.Base.build
+                              @ GHC.Base.String
+                              (\ @ b
+                                 (c :: GHC.Base.String -> b -> b)[OneShot]
+                                 (n :: b)[OneShot] ->
+                               Data.OldList.wordsFB @ b c n wild))) }) -}
 5fab3657f49c7d01d29933b631a0855d
   parseTriple ::
     [GHC.Base.String]
@@ -178,6 +189,9 @@ e6e28483e9124e10236f2d16fae3a53a
 acbc6e432177642bd08870cab841f833
   removeSpaces3 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: (" "#) -}
+c43019f727caea185d522c6d425ad4c9
+  strToInt :: [GHC.Base.String] -> [GHC.Types.Int]
+  {- Arity: 1, Strictness: <S,1*U> -}
 f2b91aaa7e5094cd01f8ba6dc22274d4
   validGrid :: [[GHC.Types.Int]] -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,

@@ -11,4 +11,4 @@ Building executable 'intero' for intero-0.1.28..
 [8 of 9] Compiling InteractiveUI    ( src\InteractiveUI.hs, .stack-work\dist\5c8418a7\build\intero\intero-tmp\InteractiveUI.o )
 [9 of 9] Compiling Main             ( src\Main.hs, .stack-work\dist\5c8418a7\build\intero\intero-tmp\Main.o )
 Linking .stack-work\dist\5c8418a7\build\intero\intero.exe ...
-Installing executable intero in C:\Users\jicka_000\Desktop\CPSC449\449-haskell-self-2\.stack-work\install\9d660cc9\bin
+Installing executable intero in C:\Users\User\Desktop\CPSC449\449-haskell-self-2\.stack-work\install\9d660cc9\bin

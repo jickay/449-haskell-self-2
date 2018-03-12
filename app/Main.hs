@@ -17,7 +17,11 @@ module Main where
         let linesOfFile = lines contents
             outFileName = args !! 1
         print linesOfFile
-    
+
+        -- Check for comments and spelling
+        let commentErrorCheck = checkComments linesOfFile
+        outputError outFileName commentErrorCheck
+
         -- Parser
         let forcedPairs = getTupleSection linesOfFile "forced partial assignment:"
             forbidPairs = getTupleSection linesOfFile "forbidden machine:"
@@ -55,18 +59,35 @@ module Main where
     
         -- Print output file
         output args solution
+
+    -- Check for comments in file
+    checkComments :: [String] -> String
+    checkComments [] = ""
+    checkComments (aLine:linesOfFile)
+        | hasCommentChar aLine commentChars       = "Error while parsing input file"
+        | otherwise                               = checkComments linesOfFile
+        where commentChars = "!@#$%^&*/\\"
+    
+    hasCommentChar :: String -> String -> Bool
+    hasCommentChar [] _ = False
+    hasCommentChar _ [] = False
+    hasCommentChar aLine (char:chars)
+        | char `elem` aLine     = True
+        | otherwise             = hasCommentChar aLine chars
     
     -- Make solution string for output
     makeSolution :: String -> Int -> String
     makeSolution matches quality = "Solution " ++ matchWithSpaces ++ "; Quality: " ++ qualityString
         where matchWithSpaces = intersperse ' ' matches
               qualityString = show quality
-
+    
+    -- Check if forced match is valid
     forcedMatchValid :: String -> String
     forcedMatchValid [] = ""
-    forcedMatchValid matches =
-        if matches == "No valid solution possible!" then matches else ""
+    forcedMatchValid x =
+        if x == "No valid solution possible!" then x else ""
 
+    -- Check if solution is valid
     solutionValid :: String -> String
     solutionValid [] = ""
     solutionValid (x:xs)

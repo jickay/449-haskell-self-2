@@ -1,13 +1,13 @@
 
 ==================== FINAL INTERFACE ====================
-2018-03-09 22:33:35.465122 UTC
+2018-03-12 20:31:23.0907032 UTC
 
 interface jkfso-haskell-0.1.0.0-9wfP2njLanP40orVtGiOyG:HardConstraints 8022
-  interface hash: 1af0c4ee30f79f157c9cf6814fca7c30
-  ABI hash: b8cce133a0c50166437a32310b787d70
+  interface hash: 829c518d75f3954277308be8824d4726
+  ABI hash: e0987c393cf3de8260f4ac7dbecdeac7
   export-list hash: 44a146debe8e3d7980f77b6fbf107fe6
   orphan hash: 37381a75cf0e7e7b96c45fcb5089ad9f
-  flag hash: c98e1eb85fe7ed81c2ec56ee6ec1ed45
+  flag hash: d22a7c21c2893d38d08642ed0a9c099e
   sig of: Nothing
   used TH splices: False
   where
@@ -192,10 +192,9 @@ f899a8dec0e9118a6850413088679aa3
 b94c7fffac7296386d685b9785d9e0bd
   getMachs :: [(GHC.Types.Char, GHC.Types.Char)] -> [GHC.Types.Char]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-98203e5bb2809c715ae03f5d4ddb904b
+45a48e7146754f8a56edf5e9b0b97ebd
   getTasks :: [(GHC.Types.Char, GHC.Types.Char)] -> [GHC.Types.Char]
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
-     Unfolding: (HardConstraints.getMachs) -}
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
 f4955cbfaccff2dd13cc0e90af808ad6
   makeForced ::
     [(GHC.Types.Char, GHC.Types.Char)]

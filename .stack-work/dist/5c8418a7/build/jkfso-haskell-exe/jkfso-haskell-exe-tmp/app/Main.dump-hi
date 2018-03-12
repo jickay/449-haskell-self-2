@@ -1,18 +1,20 @@
 
 ==================== FINAL INTERFACE ====================
-2018-03-09 22:41:52.6202187 UTC
+2018-03-12 20:31:28.5031391 UTC
 
 interface main:Main 8022
-  interface hash: c54ccc9da1f907f01bb597b34d4a1fc6
-  ABI hash: c67ecbc62cbae6b6266b5af0cdfd5a0a
-  export-list hash: 34e7efa8403f70a6098268b353e3a431
+  interface hash: 6370ae15a165c7f71b157114164ab91d
+  ABI hash: 3c83b72c8578de9a1a6050d98c7b3b97
+  export-list hash: 28b9ee1cd8e908da99b7f05dc4c9a236
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
-  flag hash: 49bc03923b6b72218773bcd45aaea9d8
+  flag hash: b9c7e8ff195830d0fc56c19d3fd5fa92
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  Main.checkComments
   Main.forcedMatchValid
+  Main.hasCommentChar
   Main.main
   Main.makeSolution
   Main.solutionValid
@@ -26,6 +28,7 @@ family instance modules: base-4.10.1.0:Control.Applicative
                          base-4.10.1.0:Data.Type.Equality base-4.10.1.0:GHC.Generics
                          base-4.10.1.0:GHC.IO.Exception base-4.10.1.0:GHC.TypeLits
                          base-4.10.1.0:GHC.TypeNats
+import  -/  base-4.10.1.0:Data.Foldable 4349255461f1285ad885cd2301205c36
 import  -/  base-4.10.1.0:Data.List e5312e282ad78d8152090e079f862b53
 import  -/  base-4.10.1.0:Data.OldList fdea655c7bec488a3994df222c677ab7
 import  -/  base-4.10.1.0:GHC.Base 8f949d675e49677c272f02ab7a85fe18
@@ -36,10 +39,10 @@ import  -/  base-4.10.1.0:System.Environment 29b8ecc18446119a33172a40409ab016
 import  -/  base-4.10.1.0:System.IO 1fb8f1d116df69c8750950ac088a90e6
 import  -/  ghc-prim-0.5.1.1:GHC.Classes 64ad5910d03ab188ab9b4adef7487b1e
 import  -/  ghc-prim-0.5.1.1:GHC.Types b1fd0716441595db508c1a74387bf394
-import  -/  jkfso-haskell-0.1.0.0:HardConstraints b8cce133a0c50166437a32310b787d70
+import  -/  jkfso-haskell-0.1.0.0:HardConstraints e0987c393cf3de8260f4ac7dbecdeac7
 import  -/  jkfso-haskell-0.1.0.0:Input 6fc3a9f46a44920ea6eadc837c4147b3
-import  -/  jkfso-haskell-0.1.0.0:Parser 6b1b2e52d986ebe1a0394b1a1b0f7802
-import  -/  jkfso-haskell-0.1.0.0:SoftConstraints 5e5ab34aee25158049bb25933a33f568
+import  -/  jkfso-haskell-0.1.0.0:Parser 8eb0dc2b4febf30e20663b464ea9e604
+import  -/  jkfso-haskell-0.1.0.0:SoftConstraints 490ba58a8a4eba1b5afd8e2b3d7a0f0c
 9d72b2fddb818bcd8919052935e0f1f3
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -58,6 +61,9 @@ e5875966b74dad2d29772660b8a75e33
 d026be77cb9ced20e35a61514e0458aa
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
+4dc857a0e88819f9a4057e4c662c048c
+  checkComments :: [GHC.Base.String] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U> -}
 c85431048e5b3cf0babe03c3301606bb
   forcedMatchValid :: GHC.Base.String -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
@@ -76,6 +82,10 @@ e79e8ce72c2469fbef07d25e09d2fbaa
 283366ba75e68541f557326e2a148bc0
   forcedMatchValid2 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("No valid solution possible!"#) -}
+f778f4d2223829516482e20da21e315e
+  hasCommentChar ::
+    GHC.Base.String -> GHC.Base.String -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U> -}
 16c8b5a7e0fffcc12f6a3958110c69b9
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
