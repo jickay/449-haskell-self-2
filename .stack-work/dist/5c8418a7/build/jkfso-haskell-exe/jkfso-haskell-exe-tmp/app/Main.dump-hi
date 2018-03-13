@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2018-03-12 20:31:28.5031391 UTC
+2018-03-13 23:26:33.3392771 UTC
 
 interface main:Main 8022
-  interface hash: 6370ae15a165c7f71b157114164ab91d
-  ABI hash: 3c83b72c8578de9a1a6050d98c7b3b97
-  export-list hash: 28b9ee1cd8e908da99b7f05dc4c9a236
+  interface hash: b2460f208f090cdfd4e021d869f966b9
+  ABI hash: dd9afb20aac5004d57e6b7b853a8031f
+  export-list hash: 90e19b14d3cac5348a9b28f58ee21aea
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: b9c7e8ff195830d0fc56c19d3fd5fa92
   sig of: Nothing
@@ -13,7 +13,9 @@ interface main:Main 8022
   where
 exports:
   Main.checkComments
+  Main.checkLabels
   Main.forcedMatchValid
+  Main.foundLabel
   Main.hasCommentChar
   Main.main
   Main.makeSolution
@@ -64,6 +66,10 @@ d026be77cb9ced20e35a61514e0458aa
 4dc857a0e88819f9a4057e4c662c048c
   checkComments :: [GHC.Base.String] -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U> -}
+374aa06aed6c6b3f35b95d7d7e494440
+  checkLabels ::
+    [GHC.Base.String] -> [GHC.Base.String] -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U> -}
 c85431048e5b3cf0babe03c3301606bb
   forcedMatchValid :: GHC.Base.String -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
@@ -82,6 +88,10 @@ e79e8ce72c2469fbef07d25e09d2fbaa
 283366ba75e68541f557326e2a148bc0
   forcedMatchValid2 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("No valid solution possible!"#) -}
+c22ab1b883e756e9b1f6facb3dd11fce
+  foundLabel ::
+    [GHC.Base.String] -> GHC.Base.String -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U> -}
 f778f4d2223829516482e20da21e315e
   hasCommentChar ::
     GHC.Base.String -> GHC.Base.String -> GHC.Types.Bool

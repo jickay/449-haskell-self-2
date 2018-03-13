@@ -22,6 +22,10 @@ module Main where
         let commentErrorCheck = checkComments linesOfFile
         outputError outFileName commentErrorCheck
 
+        let labels = ["Name:","forced partial assignment:","forbidden machine:","too-near tasks:","machine penalties:","too-near penalities"]
+            labelErrorCheck = checkLabels linesOfFile labels
+        outputError outFileName labelErrorCheck
+
         -- Parser
         let forcedPairs = getTupleSection linesOfFile "forced partial assignment:"
             forbidPairs = getTupleSection linesOfFile "forbidden machine:"
@@ -66,7 +70,7 @@ module Main where
     checkComments (aLine:linesOfFile)
         | hasCommentChar aLine commentChars       = "Error while parsing input file"
         | otherwise                               = checkComments linesOfFile
-        where commentChars = "!@#$%^&*/\\"
+        where commentChars = "!@#$%^&*/"
     
     hasCommentChar :: String -> String -> Bool
     hasCommentChar [] _ = False
@@ -74,6 +78,20 @@ module Main where
     hasCommentChar aLine (char:chars)
         | char `elem` aLine     = True
         | otherwise             = hasCommentChar aLine chars
+
+    -- Check labels for correct order and spelling
+    checkLabels :: [String] -> [String] -> String
+    checkLabels [] _ = ""
+    checkLabels _ [] = ""
+    checkLabels linesOfFile (aLabel:labels)
+        | foundLabel linesOfFile aLabel          = checkLabels linesOfFile labels
+        | otherwise                             = "Error while parsing input file"
+    
+    foundLabel :: [String] -> String -> Bool
+    foundLabel [] _ = False
+    foundLabel (x:xs) label
+        | x == label        = True
+        | otherwise         = foundLabel xs label
     
     -- Make solution string for output
     makeSolution :: String -> Int -> String
